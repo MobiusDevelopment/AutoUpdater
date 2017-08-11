@@ -83,13 +83,18 @@ Public Class frmMain
     End Sub
 
     Private Function checkAddress(ByVal URL As String) As Boolean
+        Dim req As WebRequest
+        req = WebRequest.Create(URL)
+        Dim resp As WebResponse
         Try
-            Dim request As WebRequest = WebRequest.Create(URL)
-            Dim response As WebResponse = request.GetResponse()
+            resp = req.GetResponse()
+            resp.Close()
+            req = Nothing
+            Return True
         Catch ex As Exception
+            req = Nothing
             Return False
         End Try
-        Return True
     End Function
 
     Private Sub updateFromWeb()
