@@ -2,6 +2,7 @@
 Imports System.IO.Compression
 Imports System.Net
 Imports System.Security.Cryptography
+Imports System.Text.RegularExpressions
 
 Public Class frmMain
     Dim gameServerIP = "127.0.0.1"
@@ -125,7 +126,7 @@ Public Class frmMain
         For Each fileInfo In myFileList
             'Split info
             fileHash = fileInfo.Split(vbTab)(0)
-            fileName = fileInfo.Split(vbTab)(1)
+            fileName = Regex.Replace(fileInfo.Split(vbTab)(1), "[^\u0020-\u007E]+", String.Empty) 'Use regex to remove non ASCII characters
 
             'Check for self update
             If fileName.ToLower.Equals(myFileName.ToLower) Then
@@ -145,16 +146,12 @@ Public Class frmMain
             'Check if file exists
             If (File.Exists(myStartupPath + fileName)) Then
                 'No need to update if hash is correct
-                If getFileHash(myStartupPath + fileName).Equals(fileHash) Then
+                If Not getFileHash(myStartupPath + fileName).Equals(fileHash) Then
                     Continue For
                 End If
             End If
 
-            'Change label to downloading
-            'Threading.Thread.Sleep(100)
-            progressText = "Downloading: " + fileName
-
-            'Download the zip file
+            'Check if file exists
             Dim downloadedFileName As String
             If fileName.Contains("\") Then
                 downloadedFileName = myStartupPath + downloadFolderName + "\" + Mid(fileName, fileName.LastIndexOf("\") + 1, fileName.Length) + ".tmp"
@@ -170,6 +167,12 @@ Public Class frmMain
                 'could not be found on the server (network delay maybe)
                 Continue For
             End Try
+
+            'Change label to downloading
+            'Threading.Thread.Sleep(100)
+            progressText = "Downloading: " + fileName
+
+            'Download the zip file
             Dim writeStream As New FileStream(downloadedFileName, FileMode.Create)
             Dim nRead As Integer
             Do
@@ -190,7 +193,11 @@ Public Class frmMain
                 End If
             End If
             'Delete older file
+            Dim fileExists As Boolean = False 'used this boolean because File.Exists may lock the file
             If File.Exists(myStartupPath + fileName) Then
+                fileExists = True
+            End If
+            If fileExists Then
                 File.Delete(myStartupPath + fileName)
             End If
 
