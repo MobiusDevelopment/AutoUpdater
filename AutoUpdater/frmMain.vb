@@ -146,7 +146,7 @@ Public Class frmMain
             'Check if file exists
             If (File.Exists(myStartupPath + fileName)) Then
                 'No need to update if hash is correct
-                If Not getFileHash(myStartupPath + fileName).Equals(fileHash) Then
+                If getFileHash(myStartupPath + fileName).Equals(fileHash) Then
                     Continue For
                 End If
             End If
