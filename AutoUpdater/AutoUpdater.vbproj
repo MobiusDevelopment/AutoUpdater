@@ -163,20 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\background_full.png" />
-    <None Include="images\progress_bar_energy.bmp" />
-    <None Include="images\start_button_onMouseOver.png" />
-    <None Include="images\start_button_normal.png" />
-    <None Include="images\check_files_normal.png" />
-    <None Include="images\check_files_onMouseOver.png" />
-    <None Include="images\check_files_onClick.png" />
-    <None Include="images\start_button_onClick.png" />
-    <None Include="images\close_button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="images\close_button_normal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="images\close_button_over.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="l2.ico" />
