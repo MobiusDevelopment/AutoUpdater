@@ -1,4 +1,4 @@
-﻿Imports System.IO
+Imports System.IO
 Imports System.IO.Compression
 Imports System.Net
 Imports System.Security.Cryptography
@@ -151,39 +151,26 @@ Public Class frmMain
                 End If
             End If
 
-            'Check if file exists
+            'Generate the download file name
             Dim downloadedFileName As String
             If fileName.Contains("\") Then
                 downloadedFileName = myStartupPath + downloadFolderName + "\" + Mid(fileName, fileName.LastIndexOf("\") + 1, fileName.Length) + ".tmp"
             Else
                 downloadedFileName = myStartupPath + downloadFolderName + "\" + fileName + ".tmp"
             End If
-            Dim webResponse As HttpWebResponse
-            Dim webRequest As HttpWebRequest
-            Try 'Check if the file exists
-                webRequest = Net.WebRequest.Create(baseURL + pakFolderName + "/" + fileName.Replace("\", "/") + pakExtension)
-                webResponse = webRequest.GetResponse
-            Catch ex As Exception
-                'could not be found on the server (network delay maybe)
-                Continue For
-            End Try
 
             'Change label to downloading
             'Threading.Thread.Sleep(100)
             progressText = "Downloading: " + fileName
 
             'Download the zip file
-            Dim writeStream As New FileStream(downloadedFileName, FileMode.Create)
-            Dim nRead As Integer
-            Do
-                Dim readBytes(4095) As Byte
-                Dim bytesread As Integer = webResponse.GetResponseStream.Read(readBytes, 0, 4096)
-                nRead += bytesread
-                If bytesread = 0 Then Exit Do
-                writeStream.Write(readBytes, 0, bytesread)
-            Loop
-            webResponse.GetResponseStream.Close()
-            writeStream.Close()
+            Try
+                client.DownloadFile(baseURL + pakFolderName + "/" + fileName.Replace("\", "/") + pakExtension, downloadedFileName)
+            Catch ex As Exception
+                'Could not be found on the server (network delay maybe)
+                MsgBox("Problem downloading " + fileName, MsgBoxStyle.Critical)
+                Continue For
+            End Try
 
             'Extract the file
             If fileName.Contains("\") Then
@@ -224,28 +211,18 @@ Public Class frmMain
     End Sub
 
     Private Sub startSelfUpdate()
-        'Download the zip file
+        'Generate the download file name
         Dim downloadedFileName = myStartupPath + downloadFolderName + "\" + myFileName + ".tmp"
-        Dim webResponse As HttpWebResponse
-        Dim webRequest As HttpWebRequest
-        Try 'Check if the file exists
-            webRequest = Net.WebRequest.Create(baseURL + pakFolderName + "/" + myFileName + pakExtension)
-            webResponse = webRequest.GetResponse
+
+        'Download the zip file
+        Dim webClient As New WebClient()
+        Try
+            webClient.DownloadFile(baseURL + pakFolderName + "/" + myFileName + pakExtension, downloadedFileName)
         Catch ex As Exception
-            'could not be found on the server (network delay maybe)
+            'Could not be found on the server (network delay maybe)
+            MsgBox("Problem downloading " + myFileName, MsgBoxStyle.Critical)
             Exit Sub
         End Try
-        Dim writeStream As New FileStream(downloadedFileName, FileMode.Create)
-        Dim nRead As Integer
-        Do
-            Dim readBytes(4095) As Byte
-            Dim bytesread As Integer = webResponse.GetResponseStream.Read(readBytes, 0, 4096)
-            nRead += bytesread
-            If bytesread = 0 Then Exit Do
-            writeStream.Write(readBytes, 0, bytesread)
-        Loop
-        webResponse.GetResponseStream.Close()
-        writeStream.Close()
 
         'Extract the file
         ZipFile.ExtractToDirectory(downloadedFileName, myStartupPath + downloadFolderName)
