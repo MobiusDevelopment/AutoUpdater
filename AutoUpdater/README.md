@@ -12,6 +12,7 @@ AutoUpdater is a VB.NET application designed to automatically update software by
 - Support for transparent backgrounds and custom UI elements.
 
 ## Installation
+The only thing you need to do is open AutoUpdater.sln with Visual Studio and hit F5 to run it.<br>
 No specific installation process required. The application runs directly from the executable in the Windows environment.
 
 ## Configuration

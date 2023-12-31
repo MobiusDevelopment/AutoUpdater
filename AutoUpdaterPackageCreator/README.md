@@ -12,8 +12,8 @@ AutoUpdaterPackageCreator is a VB.NET application designed to facilitate the cre
 - SHA256 hash generation for file integrity verification.
 
 ## Installation
-No specific installation required, just ensure the .NET Framework is installed on your Windows system.
-
+The only thing you need to do is open AutoUpdaterPackageCreator.sln with Visual Studio and hit F5 to run it.<br>
+No specific installation process required. The application runs directly from the executable in the Windows environment.
 
 ## Usage
 1. **Select Source Folder:** Click on the related `Select` button to choose the source directory containing the files for packaging.
