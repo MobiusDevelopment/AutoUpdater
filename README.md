@@ -3,7 +3,7 @@
 
 Welcome to the AutoUpdater Project! This repository contains two main components:
 
-1. **AutoUpdater**: A tool for automatically updating software by downloading and installing the latest files from a web server.
+1. **AutoUpdater**: A tool for updating software by downloading and installing the latest files from a web server.
 2. **AutoUpdatePackageCreator**: A utility for creating update packages, which can then be used by the AutoUpdater.
 
 Both tools are designed to work together to provide a seamless update experience for software applications.
@@ -16,7 +16,8 @@ The AutoUpdater is a client-side application that checks for, downloads, and ins
 - [View AutoUpdater README](AutoUpdater/README.md)
 
 ### AutoUpdatePackageCreator
-The AutoUpdatePackageCreator is a tool for creating update packages. These packages are then used by the AutoUpdater to update software applications.
+The AutoUpdatePackageCreator is a tool for creating update packages.<br>
+These packages are then used by the AutoUpdater to update software applications.
 
 - [View AutoUpdatePackageCreator README](AutoUpdatePackageCreator/README.md)
 
