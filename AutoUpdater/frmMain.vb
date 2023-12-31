@@ -182,7 +182,7 @@ Public Class frmMain
                 End If
             End If
             'Delete older file
-            Dim fileExists As Boolean = False 'used this boolean because File.Exists may lock the file
+            Dim fileExists As Boolean = False 'Used this boolean because File.Exists may lock the file
             If File.Exists(myStartupPath + fileName) Then
                 fileExists = True
             End If
@@ -312,7 +312,7 @@ Public Class frmMain
     End Property
 
     'Button "Start"
-    Private Sub PicStart_Click(sender As Object, e As EventArgs) Handles picStart.Click
+    Private Sub picStart_Click(sender As Object, e As EventArgs) Handles picStart.Click
         If updating Then Exit Sub
         Try
             Shell("system\l2.bin IP=" + gameServerIP, vbNormalFocus)
@@ -323,20 +323,20 @@ Public Class frmMain
         End
     End Sub
 
-    Private Sub PicStart_MouseHover(sender As Object, e As EventArgs) Handles picStart.MouseHover
+    Private Sub picStart_MouseHover(sender As Object, e As EventArgs) Handles picStart.MouseHover
         picStart.Image = picStartOver.Image
     End Sub
 
-    Private Sub PicStart_MouseLeave(sender As Object, e As EventArgs) Handles picStart.MouseLeave
+    Private Sub picStart_MouseLeave(sender As Object, e As EventArgs) Handles picStart.MouseLeave
         picStart.Image = picStartNormal.Image
     End Sub
 
-    Private Sub PicStart_MouseDown(sender As Object, e As MouseEventArgs) Handles picStart.MouseDown
+    Private Sub picStart_MouseDown(sender As Object, e As MouseEventArgs) Handles picStart.MouseDown
         picStart.Image = picStartSelected.Image
     End Sub
 
-    'Button "Repair Files"
-    Private Sub PicRepair_Click(sender As Object, e As EventArgs) Handles picRepair.Click
+    'Button "File Repair"
+    Private Sub picRepair_Click(sender As Object, e As EventArgs) Handles picRepair.Click
         If updating Then Exit Sub
 
         'Connectivity check
@@ -352,15 +352,15 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub PicRepair_MouseHover(sender As Object, e As EventArgs) Handles picRepair.MouseHover
+    Private Sub picRepair_MouseHover(sender As Object, e As EventArgs) Handles picRepair.MouseHover
         picRepair.Image = picRepairOver.Image
     End Sub
 
-    Private Sub PicRepair_MouseLeave(sender As Object, e As EventArgs) Handles picRepair.MouseLeave
+    Private Sub picRepair_MouseLeave(sender As Object, e As EventArgs) Handles picRepair.MouseLeave
         picRepair.Image = picRepairNormal.Image
     End Sub
 
-    Private Sub PicRepair_MouseDown(sender As Object, e As MouseEventArgs) Handles picRepair.MouseDown
+    Private Sub picRepair_MouseDown(sender As Object, e As MouseEventArgs) Handles picRepair.MouseDown
         picRepair.Image = picRepairSelected.Image
     End Sub
 
@@ -370,7 +370,7 @@ Public Class frmMain
     End Sub
 
     'Button "X" - Close
-    Private Sub PcbClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
+    Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
         If updating Then
             Dim result As Integer = MessageBox.Show("Exit while updating?", "Warning", MessageBoxButtons.YesNo)
             If result = DialogResult.No Then
@@ -380,39 +380,39 @@ Public Class frmMain
         End
     End Sub
 
-    Private Sub PicClose_MouseHover(sender As Object, e As EventArgs) Handles picClose.MouseHover
+    Private Sub picClose_MouseHover(sender As Object, e As EventArgs) Handles picClose.MouseHover
         picClose.Image = picCloseOver.Image
     End Sub
 
-    Private Sub PicClose_MouseLeave(sender As Object, e As EventArgs) Handles picClose.MouseLeave
+    Private Sub picClose_MouseLeave(sender As Object, e As EventArgs) Handles picClose.MouseLeave
         picClose.Image = picCloseNormal.Image
     End Sub
 
-    Private Sub PicClose_MouseDown(sender As Object, e As MouseEventArgs) Handles picClose.MouseDown
+    Private Sub picClose_MouseDown(sender As Object, e As MouseEventArgs) Handles picClose.MouseDown
         picClose.Image = picCloseSelected.Image
     End Sub
 
     'Button "_" - Minimize
-    Private Sub PicMinimize_Click(sender As Object, e As EventArgs) Handles picMinimize.Click
+    Private Sub picMinimize_Click(sender As Object, e As EventArgs) Handles picMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub PicMinimize_MouseHover(sender As Object, e As EventArgs) Handles picMinimize.MouseHover
+    Private Sub picMinimize_MouseHover(sender As Object, e As EventArgs) Handles picMinimize.MouseHover
         picMinimize.Image = picMinimizeOver.Image
     End Sub
 
-    Private Sub PicMinimize_MouseLeave(sender As Object, e As EventArgs) Handles picMinimize.MouseLeave
+    Private Sub picMinimize_MouseLeave(sender As Object, e As EventArgs) Handles picMinimize.MouseLeave
         picMinimize.Image = picMinimizeNormal.Image
     End Sub
 
-    Private Sub PicMinimize_MouseDown(sender As Object, e As MouseEventArgs) Handles picMinimize.MouseDown
+    Private Sub picMinimize_MouseDown(sender As Object, e As MouseEventArgs) Handles picMinimize.MouseDown
         picMinimize.Image = picMinimizeSelected.Image
     End Sub
 
-    Private Sub UpdateTimer_Tick(sender As Object, e As EventArgs) Handles UpdateTimer.Tick
+    Private Sub updateTimer_Tick(sender As Object, e As EventArgs) Handles UpdateTimer.Tick
         If Me.InvokeRequired Then
             'If we're not on the UI thread, re-invoke this method on the UI thread
-            Me.Invoke(Sub() UpdateTimer_Tick(sender, e))
+            Me.Invoke(Sub() updateTimer_Tick(sender, e))
         Else
             'Now we are on the UI thread, safe to update the control
             If progressBarCounterMax > 0 AndAlso progressBarCounter > 0 Then ' Ensure progressBarCounter is not 0 to avoid division by zero
