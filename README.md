@@ -15,11 +15,11 @@ The AutoUpdater is a client-side application that checks for, downloads, and ins
 
 - [View AutoUpdater README](AutoUpdater/README.md)
 
-### AutoUpdatePackageCreator
-The AutoUpdatePackageCreator is a tool for creating update packages.<br>
+### AutoUpdaterPackageCreator
+The AutoUpdaterPackageCreator is a tool for creating update packages.<br>
 These packages are then used by the AutoUpdater to update software applications.
 
-- [View AutoUpdatePackageCreator README](AutoUpdatePackageCreator/README.md)
+- [View AutoUpdaterPackageCreator README](AutoUpdaterPackageCreator/README.md)
 
 ## Getting Started
 To get started with the AutoUpdater project, you will need to clone this repository and then navigate to each tool's respective directory to read their specific `README.md` for detailed instructions and configurations.
