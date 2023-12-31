@@ -97,7 +97,7 @@ Partial Class frmMain
 		'
 		Me.picMinimize.BackColor = System.Drawing.Color.Transparent
 		Me.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picMinimize.Image = CType(resources.GetObject("picMinimize.Image"), System.Drawing.Image)
+		Me.picMinimize.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_min_normal
 		Me.picMinimize.Location = New System.Drawing.Point(565, 14)
 		Me.picMinimize.Name = "picMinimize"
 		Me.picMinimize.Size = New System.Drawing.Size(16, 16)
@@ -108,7 +108,7 @@ Partial Class frmMain
 		'
 		Me.picClose.BackColor = System.Drawing.Color.Transparent
 		Me.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picClose.Image = CType(resources.GetObject("picClose.Image"), System.Drawing.Image)
+		Me.picClose.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_close_normal
 		Me.picClose.Location = New System.Drawing.Point(587, 15)
 		Me.picClose.Name = "picClose"
 		Me.picClose.Size = New System.Drawing.Size(16, 16)
@@ -119,7 +119,7 @@ Partial Class frmMain
 		'
 		Me.picMinimizeNormal.BackColor = System.Drawing.Color.Transparent
 		Me.picMinimizeNormal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picMinimizeNormal.Image = CType(resources.GetObject("picMinimizeNormal.Image"), System.Drawing.Image)
+		Me.picMinimizeNormal.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_min_normal
 		Me.picMinimizeNormal.Location = New System.Drawing.Point(434, 15)
 		Me.picMinimizeNormal.Name = "picMinimizeNormal"
 		Me.picMinimizeNormal.Size = New System.Drawing.Size(16, 16)
@@ -131,7 +131,7 @@ Partial Class frmMain
 		'
 		Me.picMinimizeOver.BackColor = System.Drawing.Color.Transparent
 		Me.picMinimizeOver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picMinimizeOver.Image = CType(resources.GetObject("picMinimizeOver.Image"), System.Drawing.Image)
+		Me.picMinimizeOver.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_min_over
 		Me.picMinimizeOver.Location = New System.Drawing.Point(450, 15)
 		Me.picMinimizeOver.Name = "picMinimizeOver"
 		Me.picMinimizeOver.Size = New System.Drawing.Size(16, 16)
@@ -143,7 +143,7 @@ Partial Class frmMain
 		'
 		Me.picMinimizeSelected.BackColor = System.Drawing.Color.Transparent
 		Me.picMinimizeSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picMinimizeSelected.Image = CType(resources.GetObject("picMinimizeSelected.Image"), System.Drawing.Image)
+		Me.picMinimizeSelected.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_min_select
 		Me.picMinimizeSelected.Location = New System.Drawing.Point(466, 15)
 		Me.picMinimizeSelected.Name = "picMinimizeSelected"
 		Me.picMinimizeSelected.Size = New System.Drawing.Size(16, 16)
@@ -155,7 +155,7 @@ Partial Class frmMain
 		'
 		Me.picCloseNormal.BackColor = System.Drawing.Color.Transparent
 		Me.picCloseNormal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picCloseNormal.Image = CType(resources.GetObject("picCloseNormal.Image"), System.Drawing.Image)
+		Me.picCloseNormal.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_close_normal
 		Me.picCloseNormal.Location = New System.Drawing.Point(487, 15)
 		Me.picCloseNormal.Name = "picCloseNormal"
 		Me.picCloseNormal.Size = New System.Drawing.Size(16, 16)
@@ -167,7 +167,7 @@ Partial Class frmMain
 		'
 		Me.picCloseOver.BackColor = System.Drawing.Color.Transparent
 		Me.picCloseOver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picCloseOver.Image = CType(resources.GetObject("picCloseOver.Image"), System.Drawing.Image)
+		Me.picCloseOver.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_close_over
 		Me.picCloseOver.Location = New System.Drawing.Point(503, 15)
 		Me.picCloseOver.Name = "picCloseOver"
 		Me.picCloseOver.Size = New System.Drawing.Size(16, 16)
@@ -179,7 +179,7 @@ Partial Class frmMain
 		'
 		Me.picCloseSelected.BackColor = System.Drawing.Color.Transparent
 		Me.picCloseSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picCloseSelected.Image = CType(resources.GetObject("picCloseSelected.Image"), System.Drawing.Image)
+		Me.picCloseSelected.Image = Global.AutoUpdater.My.Resources.Resources.frames_df_btn_close_select
 		Me.picCloseSelected.Location = New System.Drawing.Point(518, 15)
 		Me.picCloseSelected.Name = "picCloseSelected"
 		Me.picCloseSelected.Size = New System.Drawing.Size(16, 16)
@@ -191,7 +191,7 @@ Partial Class frmMain
 		'
 		Me.picStart.BackColor = System.Drawing.Color.Transparent
 		Me.picStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picStart.Image = CType(resources.GetObject("picStart.Image"), System.Drawing.Image)
+		Me.picStart.Image = Global.AutoUpdater.My.Resources.Resources.start_normal
 		Me.picStart.Location = New System.Drawing.Point(470, 274)
 		Me.picStart.Name = "picStart"
 		Me.picStart.Size = New System.Drawing.Size(157, 146)
@@ -202,7 +202,7 @@ Partial Class frmMain
 		'
 		Me.picStartNormal.BackColor = System.Drawing.Color.Transparent
 		Me.picStartNormal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picStartNormal.Image = CType(resources.GetObject("picStartNormal.Image"), System.Drawing.Image)
+		Me.picStartNormal.Image = Global.AutoUpdater.My.Resources.Resources.start_normal
 		Me.picStartNormal.Location = New System.Drawing.Point(387, 288)
 		Me.picStartNormal.Name = "picStartNormal"
 		Me.picStartNormal.Size = New System.Drawing.Size(22, 21)
@@ -214,7 +214,7 @@ Partial Class frmMain
 		'
 		Me.picStartOver.BackColor = System.Drawing.Color.Transparent
 		Me.picStartOver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picStartOver.Image = CType(resources.GetObject("picStartOver.Image"), System.Drawing.Image)
+		Me.picStartOver.Image = Global.AutoUpdater.My.Resources.Resources.start_over
 		Me.picStartOver.Location = New System.Drawing.Point(413, 288)
 		Me.picStartOver.Name = "picStartOver"
 		Me.picStartOver.Size = New System.Drawing.Size(22, 21)
@@ -226,7 +226,7 @@ Partial Class frmMain
 		'
 		Me.picStartSelected.BackColor = System.Drawing.Color.Transparent
 		Me.picStartSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picStartSelected.Image = CType(resources.GetObject("picStartSelected.Image"), System.Drawing.Image)
+		Me.picStartSelected.Image = Global.AutoUpdater.My.Resources.Resources.start_select
 		Me.picStartSelected.Location = New System.Drawing.Point(440, 288)
 		Me.picStartSelected.Name = "picStartSelected"
 		Me.picStartSelected.Size = New System.Drawing.Size(22, 21)
@@ -238,7 +238,7 @@ Partial Class frmMain
 		'
 		Me.picRepair.BackColor = System.Drawing.Color.Transparent
 		Me.picRepair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picRepair.Image = CType(resources.GetObject("picRepair.Image"), System.Drawing.Image)
+		Me.picRepair.Image = Global.AutoUpdater.My.Resources.Resources.repair_normal
 		Me.picRepair.Location = New System.Drawing.Point(-15, 345)
 		Me.picRepair.Name = "picRepair"
 		Me.picRepair.Size = New System.Drawing.Size(201, 73)
@@ -249,7 +249,7 @@ Partial Class frmMain
 		'
 		Me.picRepairNormal.BackColor = System.Drawing.Color.Transparent
 		Me.picRepairNormal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picRepairNormal.Image = CType(resources.GetObject("picRepairNormal.Image"), System.Drawing.Image)
+		Me.picRepairNormal.Image = Global.AutoUpdater.My.Resources.Resources.repair_normal
 		Me.picRepairNormal.Location = New System.Drawing.Point(25, 289)
 		Me.picRepairNormal.Name = "picRepairNormal"
 		Me.picRepairNormal.Size = New System.Drawing.Size(27, 27)
@@ -261,7 +261,7 @@ Partial Class frmMain
 		'
 		Me.picRepairOver.BackColor = System.Drawing.Color.Transparent
 		Me.picRepairOver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picRepairOver.Image = CType(resources.GetObject("picRepairOver.Image"), System.Drawing.Image)
+		Me.picRepairOver.Image = Global.AutoUpdater.My.Resources.Resources.repair_over
 		Me.picRepairOver.Location = New System.Drawing.Point(58, 289)
 		Me.picRepairOver.Name = "picRepairOver"
 		Me.picRepairOver.Size = New System.Drawing.Size(27, 27)
@@ -273,7 +273,7 @@ Partial Class frmMain
 		'
 		Me.picRepairSelected.BackColor = System.Drawing.Color.Transparent
 		Me.picRepairSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picRepairSelected.Image = CType(resources.GetObject("picRepairSelected.Image"), System.Drawing.Image)
+		Me.picRepairSelected.Image = Global.AutoUpdater.My.Resources.Resources.repair_select
 		Me.picRepairSelected.Location = New System.Drawing.Point(91, 289)
 		Me.picRepairSelected.Name = "picRepairSelected"
 		Me.picRepairSelected.Size = New System.Drawing.Size(27, 27)
@@ -285,7 +285,7 @@ Partial Class frmMain
 		'
 		Me.picLoadingBack.BackColor = System.Drawing.Color.Transparent
 		Me.picLoadingBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picLoadingBack.Image = CType(resources.GetObject("picLoadingBack.Image"), System.Drawing.Image)
+		Me.picLoadingBack.Image = Global.AutoUpdater.My.Resources.Resources.loadingbar_back
 		Me.picLoadingBack.Location = New System.Drawing.Point(28, 315)
 		Me.picLoadingBack.Name = "picLoadingBack"
 		Me.picLoadingBack.Size = New System.Drawing.Size(454, 39)
@@ -296,7 +296,7 @@ Partial Class frmMain
 		'
 		Me.picLoadingFore.BackColor = System.Drawing.Color.Transparent
 		Me.picLoadingFore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picLoadingFore.Image = CType(resources.GetObject("picLoadingFore.Image"), System.Drawing.Image)
+		Me.picLoadingFore.Image = Global.AutoUpdater.My.Resources.Resources.loadingbar_fore
 		Me.picLoadingFore.Location = New System.Drawing.Point(28, 315)
 		Me.picLoadingFore.Name = "picLoadingFore"
 		Me.picLoadingFore.Size = New System.Drawing.Size(454, 39)
@@ -307,7 +307,7 @@ Partial Class frmMain
 		'
 		Me.picLoadingSeperator.BackColor = System.Drawing.Color.Transparent
 		Me.picLoadingSeperator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-		Me.picLoadingSeperator.Image = CType(resources.GetObject("picLoadingSeperator.Image"), System.Drawing.Image)
+		Me.picLoadingSeperator.Image = Global.AutoUpdater.My.Resources.Resources.loading_seperator
 		Me.picLoadingSeperator.Location = New System.Drawing.Point(482, 315)
 		Me.picLoadingSeperator.Name = "picLoadingSeperator"
 		Me.picLoadingSeperator.Size = New System.Drawing.Size(1, 39)
@@ -319,7 +319,7 @@ Partial Class frmMain
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.Color.Black
-		Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+		Me.BackgroundImage = Global.AutoUpdater.My.Resources.Resources.frame_black_background
 		Me.ClientSize = New System.Drawing.Size(620, 419)
 		Me.Controls.Add(Me.picLoadingSeperator)
 		Me.Controls.Add(Me.picLoadingFore)

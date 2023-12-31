@@ -118,4 +118,52 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="frame_black_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\frame_black_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frames_df_btn_close_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\frames_df_btn_close_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frames_df_btn_close_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\frames_df_btn_close_over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frames_df_btn_close_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\frames_df_btn_close_select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frames_df_btn_min_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\frames_df_btn_min_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frames_df_btn_min_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\frames_df_btn_min_over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frames_df_btn_min_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\frames_df_btn_min_select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading_seperator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\loading_seperator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loadingbar_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\loadingbar_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loadingbar_fore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\loadingbar_fore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repair_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\repair_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repair_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\repair_over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repair_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\repair_select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\start_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\start_over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\start_select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

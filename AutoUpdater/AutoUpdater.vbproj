@@ -162,6 +162,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\frame_black_background.png" />
+    <None Include="images\frames_df_btn_close_normal.png" />
+    <None Include="images\frames_df_btn_close_over.png" />
+    <None Include="images\frames_df_btn_close_select.png" />
+    <None Include="images\frames_df_btn_min_normal.png" />
+    <None Include="images\frames_df_btn_min_over.png" />
+    <None Include="images\frames_df_btn_min_select.png" />
+    <None Include="images\loading_seperator.png" />
+    <None Include="images\loadingbar_back.png" />
+    <None Include="images\loadingbar_fore.png" />
+    <None Include="images\repair_normal.png" />
+    <None Include="images\repair_over.png" />
+    <None Include="images\repair_select.png" />
+    <None Include="images\start_normal.png" />
+    <None Include="images\start_over.png" />
+    <None Include="images\start_select.png" />
     <Content Include="l2.ico" />
   </ItemGroup>
   <ItemGroup />
