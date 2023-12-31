@@ -28,7 +28,9 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Set transparent form background
-        Me.TransparencyKey = Me.BackColor
+        SetStyle(ControlStyles.SupportsTransparentBackColor, True)
+        Me.BackColor = Color.Black
+        Me.TransparencyKey = Color.Black
 
         'Get application startup path
         Dim myPath As String = Application.StartupPath
@@ -52,7 +54,7 @@ Public Class frmMain
             MyWebBrowser.Navigate(New Uri(browserURL))
         End If
         If Not checkAddress(versionFileURL) Then
-            btnCheck.Enabled = False
+            picRepair.Enabled = False
             Exit Sub 'offline mode
         End If
 
@@ -75,8 +77,8 @@ Public Class frmMain
         'Update if necessary
         If (launcherLocalVersion < launcherWebVersion) Then
             'Disable buttons
-            btnStart.Enabled = False
-            btnCheck.Enabled = False
+            picStart.Enabled = False
+            picRepair.Enabled = False
             lblFileName.Text = ""
             UpdateTimer.Enabled = True
             Call New Action(AddressOf updateFromWeb).BeginInvoke(Nothing, Me)
@@ -283,8 +285,17 @@ Public Class frmMain
 
     'Progress bar subs
     Private Sub progressBarInit(count As Integer)
-        progressBarCounter = 0
-        progressBarCounterMax = count
+        If Me.InvokeRequired Then
+            ' We are on the wrong thread, marshal the call to the UI thread
+            Me.Invoke(Sub() progressBarInit(count))
+        Else
+            ' Now we are on the UI thread, safe to update the control
+            If count > 0 Then
+                picLoadingFore.Width = 0
+            End If
+            progressBarCounter = 0
+            progressBarCounterMax = count
+        End If
     End Sub
 
     Private Sub progressBarInc()
@@ -301,7 +312,7 @@ Public Class frmMain
     End Property
 
     'Button "Start"
-    Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
+    Private Sub PicStart_Click(sender As Object, e As EventArgs) Handles picStart.Click
         If updating Then Exit Sub
         Try
             Shell("system\l2.bin IP=" + gameServerIP, vbNormalFocus)
@@ -312,15 +323,27 @@ Public Class frmMain
         End
     End Sub
 
-    'Button "Check Files"
-    Private Sub btnCheck_Click(sender As Object, e As EventArgs) Handles btnCheck.Click
+    Private Sub PicStart_MouseHover(sender As Object, e As EventArgs) Handles picStart.MouseHover
+        picStart.Image = picStartOver.Image
+    End Sub
+
+    Private Sub PicStart_MouseLeave(sender As Object, e As EventArgs) Handles picStart.MouseLeave
+        picStart.Image = picStartNormal.Image
+    End Sub
+
+    Private Sub PicStart_MouseDown(sender As Object, e As MouseEventArgs) Handles picStart.MouseDown
+        picStart.Image = picStartSelected.Image
+    End Sub
+
+    'Button "Repair Files"
+    Private Sub PicRepair_Click(sender As Object, e As EventArgs) Handles picRepair.Click
         If updating Then Exit Sub
 
         'Connectivity check
         If checkAddress(versionFileURL) Then
             'Disable buttons
-            btnStart.Enabled = False
-            btnCheck.Enabled = False
+            picStart.Enabled = False
+            picRepair.Enabled = False
             lblFileName.Text = ""
             UpdateTimer.Enabled = True
             Call New Action(AddressOf updateFromWeb).BeginInvoke(Nothing, Me)
@@ -329,13 +352,25 @@ Public Class frmMain
         End If
     End Sub
 
+    Private Sub PicRepair_MouseHover(sender As Object, e As EventArgs) Handles picRepair.MouseHover
+        picRepair.Image = picRepairOver.Image
+    End Sub
+
+    Private Sub PicRepair_MouseLeave(sender As Object, e As EventArgs) Handles picRepair.MouseLeave
+        picRepair.Image = picRepairNormal.Image
+    End Sub
+
+    Private Sub PicRepair_MouseDown(sender As Object, e As MouseEventArgs) Handles picRepair.MouseDown
+        picRepair.Image = picRepairSelected.Image
+    End Sub
+
     'On unexpected form close
     Private Sub frmMain_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         End
     End Sub
 
     'Button "X" - Close
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+    Private Sub PcbClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
         If updating Then
             Dim result As Integer = MessageBox.Show("Exit while updating?", "Warning", MessageBoxButtons.YesNo)
             If result = DialogResult.No Then
@@ -345,26 +380,56 @@ Public Class frmMain
         End
     End Sub
 
+    Private Sub PicClose_MouseHover(sender As Object, e As EventArgs) Handles picClose.MouseHover
+        picClose.Image = picCloseOver.Image
+    End Sub
+
+    Private Sub PicClose_MouseLeave(sender As Object, e As EventArgs) Handles picClose.MouseLeave
+        picClose.Image = picCloseNormal.Image
+    End Sub
+
+    Private Sub PicClose_MouseDown(sender As Object, e As MouseEventArgs) Handles picClose.MouseDown
+        picClose.Image = picCloseSelected.Image
+    End Sub
+
     'Button "_" - Minimize
-    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
+    Private Sub PicMinimize_Click(sender As Object, e As EventArgs) Handles picMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub PicMinimize_MouseHover(sender As Object, e As EventArgs) Handles picMinimize.MouseHover
+        picMinimize.Image = picMinimizeOver.Image
+    End Sub
+
+    Private Sub PicMinimize_MouseLeave(sender As Object, e As EventArgs) Handles picMinimize.MouseLeave
+        picMinimize.Image = picMinimizeNormal.Image
+    End Sub
+
+    Private Sub PicMinimize_MouseDown(sender As Object, e As MouseEventArgs) Handles picMinimize.MouseDown
+        picMinimize.Image = picMinimizeSelected.Image
+    End Sub
+
     Private Sub UpdateTimer_Tick(sender As Object, e As EventArgs) Handles UpdateTimer.Tick
-        If progressBarCounterMax > 0 Then
-            MyProgressBar.Maximum = progressBarCounterMax
-        End If
-        If MyProgressBar.Maximum > 0 Then
-            MyProgressBar.Value = progressBarCounter
-        End If
+        If Me.InvokeRequired Then
+            ' If we're not on the UI thread, re-invoke this method on the UI thread
+            Me.Invoke(Sub() UpdateTimer_Tick(sender, e))
+        Else
+            ' Now we are on the UI thread, safe to update the control
+            If progressBarCounterMax > 0 AndAlso progressBarCounter > 0 Then ' Ensure progressBarCounter is not 0 to avoid division by zero
+                Dim percentage As Double = progressBarCounter / CDbl(progressBarCounterMax) ' Ensure this is the correct calculation for your progress logic
+                Dim newWidth As Integer = CInt(picLoadingBack.Width * percentage)
+                picLoadingFore.Width = newWidth
+                picLoadingSeperator.Location = New Point(picLoadingFore.Location.X + newWidth, picLoadingFore.Location.Y)
+            End If
 
-        'update info text
-        lblFileName.Text = progressText
+            'Update info text
+            lblFileName.Text = progressText
 
-        're-enable buttons check
-        If Not updating Then
-            btnCheck.Enabled = True
-            btnStart.Enabled = True
+            'Re-enable buttons check
+            If Not updating Then
+                picRepair.Enabled = True
+                picStart.Enabled = True
+            End If
         End If
     End Sub
 End Class
