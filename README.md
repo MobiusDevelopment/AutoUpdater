@@ -22,7 +22,7 @@ These packages are then used by the AutoUpdater to update software applications.
 - [View AutoUpdaterPackageCreator README](AutoUpdaterPackageCreator/README.md)
 
 ## Getting Started
-To get started with the AutoUpdater project, you will need to clone this repository and then navigate to each tool's respective directory to read their specific `README.md` for detailed instructions and configurations.
+To get started with the AutoUpdater project, you will need to clone this repository and then navigate to each tool's respective directory to read their specific `README.md` for detailed instructions and configurations.<br>
 Thank you for your interest in the AutoUpdater project!
 
 ---
