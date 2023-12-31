@@ -286,10 +286,10 @@ Public Class frmMain
     'Progress bar subs
     Private Sub progressBarInit(count As Integer)
         If Me.InvokeRequired Then
-            ' We are on the wrong thread, marshal the call to the UI thread
+            'We are on the wrong thread, marshal the call to the UI thread
             Me.Invoke(Sub() progressBarInit(count))
         Else
-            ' Now we are on the UI thread, safe to update the control
+            'Now we are on the UI thread, safe to update the control
             If count > 0 Then
                 picLoadingFore.Width = 0
             End If
@@ -411,14 +411,16 @@ Public Class frmMain
 
     Private Sub UpdateTimer_Tick(sender As Object, e As EventArgs) Handles UpdateTimer.Tick
         If Me.InvokeRequired Then
-            ' If we're not on the UI thread, re-invoke this method on the UI thread
+            'If we're not on the UI thread, re-invoke this method on the UI thread
             Me.Invoke(Sub() UpdateTimer_Tick(sender, e))
         Else
-            ' Now we are on the UI thread, safe to update the control
+            'Now we are on the UI thread, safe to update the control
             If progressBarCounterMax > 0 AndAlso progressBarCounter > 0 Then ' Ensure progressBarCounter is not 0 to avoid division by zero
                 Dim percentage As Double = progressBarCounter / CDbl(progressBarCounterMax) ' Ensure this is the correct calculation for your progress logic
                 Dim newWidth As Integer = CInt(picLoadingBack.Width * percentage)
                 picLoadingFore.Width = newWidth
+
+                'Move picLoadingSeperator to the end of picLoadingFore (just for visuals), otherwise this is not needed
                 picLoadingSeperator.Location = New Point(picLoadingFore.Location.X + newWidth, picLoadingFore.Location.Y)
             End If
 
