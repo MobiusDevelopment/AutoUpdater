@@ -1,8 +1,8 @@
-# AutoUpdate Package Creator
-<img src="https://raw.githubusercontent.com/MobiusDevelopment/AutoUpdater/master/AutoUpdatePackageCreator.png"/>
+# AutoUpdater Package Creator
+<img src="https://raw.githubusercontent.com/MobiusDevelopment/AutoUpdater/master/AutoUpdaterPackageCreator.png"/>
 
 ## Overview
-AutoUpdatePackageCreator is a VB.NET application designed to facilitate the creation of update packages. It generates individual ZIP files for each file in a source directory, maintaining the original directory structure, and creates `version.txt` and `filelist.txt` for version tracking and SHA256 hashes of the files, respectively.
+AutoUpdaterPackageCreator is a VB.NET application designed to facilitate the creation of update packages. It generates individual ZIP files for each file in a source directory, maintaining the original directory structure, and creates `version.txt` and `filelist.txt` for version tracking and SHA256 hashes of the files, respectively.
 
 ## Key Features
 - Easy selection of source and output directories.
@@ -32,7 +32,7 @@ No specific installation required, just ensure the .NET Framework is installed o
 ## File Handling and Deployment
 
 ### Generated Files
-The AutoUpdatePackageCreator generates several files during its operation:
+AutoUpdaterPackageCreator generates several files during its operation:
 - `version.txt`: Contains the version number of the package.
 - `filelist.txt`: Lists all files with their respective SHA256 hashes.
 - Individual `.zip` files for each item in the source directory, preserving the directory structure.
