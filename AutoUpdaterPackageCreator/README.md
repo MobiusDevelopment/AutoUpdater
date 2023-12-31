@@ -4,7 +4,7 @@
 ## Overview
 AutoUpdaterPackageCreator is a VB.NET application designed to facilitate the creation of update packages. It generates individual ZIP files for each file in a source directory, maintaining the original directory structure, and creates `version.txt` and `filelist.txt` for version tracking and SHA256 hashes of the files, respectively.
 
-## Key Features
+## Features
 - Easy selection of source and output directories.
 - Version number entry for package tracking.
 - Automated generation of `version.txt` and `filelist.txt`.
@@ -53,3 +53,6 @@ To deploy these files for an update mechanism, follow these steps:
 
 ### Note
 Ensure that the web server's directory structure matches the expected paths set in the application code. For example, if your application expects `version.txt` at `http://yourserver.com/updater/version.txt`, it should be placed accordingly on the server.
+
+---
+AutoUpdater Package Creator - Automating package creation with ease and reliability.
