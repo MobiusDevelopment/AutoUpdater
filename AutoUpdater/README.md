@@ -29,7 +29,7 @@ These settings are crucial for the proper operation of the AutoUpdater.
 
 ## Usage
 1. **Run AutoUpdater:** Launch the application.
-2. **Automatic Update Check:** On load, AutoUpdater will check for updates. If an update is found, it will automatically start the download process.
+2. **Automatic Update Check:** On load, AutoUpdater will check for updates. If an update is found, it will automatically start downloading.
 3. **Progress Display:** During the update, the progress is displayed on the UI.
 4. **Completion:** Once the updates are downloaded and installed, the application is up-to-date.
 
